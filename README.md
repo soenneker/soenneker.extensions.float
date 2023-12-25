@@ -8,5 +8,5 @@
 ## Installation
 
 ```
-Install-Package Soenneker.Extensions.Float
+dotnet add package Soenneker.Extensions.Float
 ```
