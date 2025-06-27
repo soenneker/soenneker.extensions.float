@@ -39,6 +39,6 @@
 
         
 
-        <PackageReference Include="Soenneker.Extensions.Decimal" Version="3.0.598" />
+        <PackageReference Include="Soenneker.Extensions.Decimal" Version="3.0.599" />
     </ItemGroup>
 </Project>
