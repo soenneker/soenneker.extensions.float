@@ -10,6 +10,7 @@ namespace Soenneker.Extensions.Float;
 public static class FloatExtension
 {
     /// <summary>Shorthand for <code>Math.Round()</code> (after converting to decimal) </summary>
+    /// <returns>The value converted to <see cref="decimal"/> and rounded to two fractional digits.</returns>
     [Pure]
     public static decimal ToCurrency(this float value)
     {
