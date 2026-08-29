@@ -4,7 +4,7 @@
 [![](https://img.shields.io/github/actions/workflow/status/soenneker/soenneker.extensions.float/codeql.yml?label=CodeQL&style=for-the-badge)](https://github.com/soenneker/soenneker.extensions.float/actions/workflows/codeql.yml)
 
 # ![](https://user-images.githubusercontent.com/4441470/224455560-91ed3ee7-f510-4041-a8d2-3fc093025112.png) Soenneker.Extensions.Float
-A collection of useful floating point extension methods.
+Converts a `float` to a two-decimal `decimal` suitable for currency calculations.
 
 ## Installation
 
@@ -12,15 +12,12 @@ A collection of useful floating point extension methods.
 dotnet add package Soenneker.Extensions.Float
 ```
 
-## Quick start
+## Usage
 
 ```csharp
 using Soenneker.Extensions.Float;
 
-float value = 42.0f;
-var result = value.ToCurrency();
+decimal amount = 19.995f.ToCurrency(); // 20.00m
 ```
 
-## Common operations
-
-- `ToCurrency()` - Shorthand for `Math.Round()` (after converting to decimal).
+`ToCurrency()` first uses `Convert.ToDecimal(float)`, then rounds to two fractional digits with midpoint-to-even (banker's) rounding. The result is a number, not a formatted string—it does not add a currency symbol or thousands separators.
