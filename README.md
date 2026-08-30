@@ -20,4 +20,6 @@ using Soenneker.Extensions.Float;
 decimal amount = 19.995f.ToCurrency(); // 20.00m
 ```
 
-`ToCurrency()` first uses `Convert.ToDecimal(float)`, then rounds to two fractional digits with midpoint-to-even (banker's) rounding. The result is a number, not a formatted string—it does not add a currency symbol or thousands separators.
+`ToCurrency()` first uses `Convert.ToDecimal(float)`, then rounds that decimal value to two fractional digits with midpoint-to-even (banker's) rounding. The result is a number, not a formatted string—it does not add a currency symbol or thousands separators.
+
+The initial conversion can reflect the precision already lost in the binary `float`; this method cannot recover the original decimal input. NaN, positive infinity, and negative infinity cannot be converted to `decimal` and throw `OverflowException`.
